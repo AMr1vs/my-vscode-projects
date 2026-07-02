@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Car Details</title>
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header"></div>
+
+    <main>
+        <section id="car-details">
+            <h1>Car Details</h1>
+            <div id="car-info">
+                <!-- Car information will be dynamically inserted here -->
+            </div>
+            <button id="back-button">Back to Listings</button>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Fetch car details from local storage or API
+        const carId = new URLSearchParams(window.location.search).get('id');
+        const carInfoDiv = document.getElementById('car-info');
+        carInfoDiv.innerHTML = '<p>Loading...</p>';
+
+        // Function to display car details
+        function displayCarDetails(car) {
+            carInfoDiv.innerHTML = `
+                <h2>${car.brand} ${car.model}</h2>
+                <p><strong>Year:</strong> ${car.year}</p>
+                <p><strong>Type:</strong> ${car.type}</p>
+                <p><strong>Price:</strong> $${car.price}</p>
+                <p><strong>Description:</strong> ${car.description || 'No description available.'}</p>
+            `;
+        }
+
+        // Fetch car data from JSON file
+        fetch('../data/cars.json')
+            .then(response => response.json())
+            .then(cars => {
+                // Ensure id comparison is type-safe
+                const car = cars.find(c => String(c.id) === String(carId));
+                if (car) {
+                    displayCarDetails(car);
+                } else {
+                    carInfoDiv.innerHTML = '<p>Car not found.</p>';
+                }
+            }).catch(() => {
+                carInfoDiv.innerHTML = '<p>Error loading car data.</p>';
+            });
+
+        // Back button functionality (fallback to listing if no history)
+        document.getElementById('back-button').addEventListener('click', () => {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'car-listing.html';
+            }
+        });
+    </script>
+</body>
+</html>

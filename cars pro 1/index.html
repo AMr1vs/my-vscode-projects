@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cars Pro - Car Dealership</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.light-mode {
+      filter: invert(1) hue-rotate(180deg);
+    }
+    body.light-mode img, body.light-mode video {
+      filter: invert(1) hue-rotate(180deg) !important;
+    }
+  </style>
+</head>
+<body style="background-color: #18121e;">
+  <!-- الهيدر بتاع الموقع -->
+  <header style="background-color: #2a1536; color: #ffb3de;">
+    <h1>Cars Pro</h1>
+    <p>أكبر معرض عربيات في مصر</p>
+  </header>
+
+  <!-- الفلاتر والبحث -->
+  <section class="filters" style="background-color: #23132b;">
+    <!-- بحث بالماركة -->
+    <input type="text" id="searchBrand" placeholder="دور على ماركة العربية..." />
+    <!-- فلتر بالسنة -->
+    <select id="filterYear">
+      <option value="">كل السنين</option>
+      <!-- السنين هتتحط من الجافاسكريبت -->
+    </select>
+    <!-- فلتر بالنوع -->
+    <select id="filterType">
+      <option value="">كل الأنواع</option>
+      <!-- الأنواع هتتحط من الجافاسكريبت -->
+    </select>
+  </section>
+
+  <!-- هنا هيتعرض العربيات -->
+  <main>
+    <section id="carList" class="car-list">
+      <!-- الكروت بتاعة العربيات هتظهر هنا -->
+    </section>
+  </main>
+
+  <!-- Add a button to toggle light mode -->
+  <button id="lightModeToggle" style="position:fixed;top:10px;right:10px;z-index:1000;">Toggle Light Mode</button>
+
+  <footer style="background-color: #2a1536; color: #ffb3de;">
+    <p>© 2024 Cars Pro. كل الحقوق محفوظة.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Add this script to handle card click navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      // Wait for car cards to be rendered by script.js
+      const observer = new MutationObserver(() => {
+        document.querySelectorAll('.car-card[data-id]').forEach(card => {
+          card.style.cursor = 'pointer';
+          card.onclick = function() {
+            const id = card.getAttribute('data-id');
+            if (id) {
+              window.location.href = `car-details.html?id=${id}`;
+            }
+          };
+        });
+      });
+      observer.observe(document.getElementById('carList'), { childList: true });
+
+      // Back button fallback logic for details page
+      if (window.location.pathname.endsWith('car-details.html')) {
+        const backBtn = document.querySelector('.back-link, #back-button');
+        if (backBtn) {
+          backBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (window.history.length > 1) {
+              window.history.back();
+            } else {
+              window.location.href = 'index.html';
+            }
+          });
+        }
+      }
+    });
+
+    const toggleBtn = document.getElementById('lightModeToggle');
+    toggleBtn.addEventListener('click', function() {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>

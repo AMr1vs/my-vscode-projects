@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealership</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <header>
+        <!-- Include header.html here -->
+    </header>
+
+    <main>
+        <h1>Welcome to Our Car Dealership</h1>
+        
+        <section id="search-filter">
+            <input type="text" id="search" placeholder="Search for cars...">
+            <select id="filter-year">
+                <option value="">Select Year</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+            <select id="filter-type">
+                <option value="">Select Type</option>
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Truck">Truck</option>
+                <!-- Add more types as needed -->
+            </select>
+            <select id="filter-brand">
+                <option value="">Select Brand</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+            <button id="sort-price-asc">Sort by Price: Low to High</button>
+            <button id="sort-price-desc">Sort by Price: High to Low</button>
+        </section>
+
+        <section id="car-list">
+            <!-- Car cards will be populated here -->
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer>
+        <!-- Include footer.html here -->
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/filters.js"></script>
+    <script src="../assets/js/search.js"></script>
+</body>
+</html>

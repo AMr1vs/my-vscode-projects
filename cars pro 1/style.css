@@ -1,0 +1,300 @@
+/* ستايل عام للموقع */
+body {
+  font-family: 'Tajawal', Arial, sans-serif;
+  background: #181818;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+  direction: rtl;
+  min-height: 100vh;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* الهيدر */
+header {
+  background-color: #2a1536;
+  color: #ffb3de;
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  box-shadow: 0 2px 8px #00000033;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #ffb3de 0%, #2a1536 100%);
+  opacity: 0.2;
+}
+
+/* الفلاتر */
+.filters {
+  background-color: #23132b;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #3a2347;
+  box-shadow: 0 2px 12px #00000022;
+  margin-bottom: 1.5rem;
+}
+
+.filters input,
+.filters select {
+  background: #1a1120;
+  color: #ffb3de;
+  border: 1px solid #3a2347;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  box-shadow: 0 1px 4px #00000022;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border: 1.5px solid #ffb3de;
+}
+
+.filters input::placeholder {
+  color: #e6a6cb;
+  opacity: 0.8;
+}
+
+/* ليست العربيات */
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+/* كارت العربية */
+.car-card {
+  background: #191919;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0003;
+  padding: 16px;
+  margin: 12px;
+  transition: box-shadow 0.2s, background 0.2s;
+  cursor: pointer;
+  color: #ffb3de;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1.5px solid #3a2347;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-card:hover {
+  box-shadow: 0 4px 16px #0005;
+  background: #232323;
+}
+
+.car-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #ffb3de;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.car-card p {
+  margin: 0.2rem 0;
+  color: #e6a6cb;
+  font-size: 1rem;
+  opacity: 0.92;
+}
+
+.car-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #ffb3de 0%, #e6a6cb 100%);
+  opacity: 0.18;
+}
+
+.car-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px #0003;
+}
+
+.car-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.car-meta {
+  margin-bottom: 8px;
+  font-size: 1.05em;
+  background: #181818;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.car-price {
+  font-size: 1.1em;
+  color: #0af;
+  margin-top: 12px;
+  font-weight: bold;
+  display: block;
+}
+
+/* زرار افتراضي */
+button, .btn {
+  background: linear-gradient(90deg, #ffb3de 0%, #e6a6cb 100%);
+  color: #2a1536;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #00000022;
+}
+
+button:hover, .btn:hover {
+  background: linear-gradient(90deg, #e6a6cb 0%, #ffb3de 100%);
+  color: #18121e;
+}
+
+/* الفوتر */
+footer {
+  background-color: #2a1536;
+  color: #ffb3de;
+  text-align: center;
+  padding: 1.2rem 0 0.8rem 0;
+  margin-top: 2rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-top: 1px solid #3a2347;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 -2px 12px #00000022;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #22162b;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a2347;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb3de;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .car-list {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .filters {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem 0;
+  }
+  header {
+    padding: 1.2rem 0 0.7rem 0;
+    font-size: 1.1rem;
+  }
+  footer {
+    font-size: 0.95rem;
+    padding: 0.8rem 0 0.6rem 0;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #222;
+  border-radius: 12px;
+  padding: 32px 24px 24px 24px;
+  box-shadow: 0 2px 16px #0006;
+  position: relative;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+  z-index: 10;
+}
+
+.mode-toggle.light {
+  background: #eee;
+  color: #222;
+}
+
+/* Light mode styles */
+body.light-mode {
+  background: #f6f6f6;
+  color: #181818;
+}
+
+body.light-mode .container {
+  background: #fff;
+  box-shadow: 0 2px 16px #0001;
+}
+
+body.light-mode .car-card {
+  background: #f0f0f0;
+  color: #222;
+}
+
+body.light-mode .car-meta {
+  background: #eaeaea;
+  color: #222;
+}
+
+body.light-mode .car-price {
+  color: #0077ff;
+}

@@ -1,0 +1,64 @@
+/* This file contains additional styles for specific components and pages. */
+
+/* General styles for the car cards */
+.car-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.car-card:hover {
+    transform: scale(1.05);
+}
+
+/* Styles for the car details page */
+.car-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.car-details img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Styles for the contact form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button styles */
+.button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .car-card {
+        flex: 1 1 100%;
+    }
+}

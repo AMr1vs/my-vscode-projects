@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاصيل السيارة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Main page style mimic -->
+  <style>
+    body {
+      font-family: 'Tajawal', Arial, sans-serif;
+      background: linear-gradient(135deg, #181818 0%, #23243a 100%);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+      direction: rtl;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 700px;
+      margin: 48px auto 40px auto;
+      background: rgba(34,34,34,0.98);
+      border-radius: 18px;
+      padding: 40px 28px 32px 28px;
+      box-shadow: 0 8px 32px #0007, 0 1.5px 8px #0af2;
+      position: relative;
+      animation: fadeIn 1.1s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .car-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 16px #0005;
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+      object-fit: cover;
+      min-height: 220px;
+      background: #222;
+    }
+    .car-img:hover {
+      transform: scale(1.025) rotate(-1deg);
+      box-shadow: 0 8px 32px #0af4, 0 2px 12px #0006;
+    }
+    .car-title {
+      font-size: 2.4em;
+      margin-bottom: 18px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 8px #0005;
+      color: #0af;
+      transition: color 0.2s;
+    }
+    .car-meta {
+      margin-bottom: 12px;
+      font-size: 1.18em;
+      background: #191c22;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-left: 10px;
+      box-shadow: 0 1px 4px #0002;
+      transition: background 0.2s, color 0.2s;
+    }
+    .car-meta:last-child {
+      margin-bottom: 0;
+    }
+    .car-price {
+      font-size: 1.5em;
+      color: #0af;
+      margin-top: 22px;
+      font-weight: bold;
+      display: block;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 4px #0003;
+      transition: color 0.2s;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 32px;
+      color: #0af;
+      text-decoration: none;
+      font-size: 1.15em;
+      font-weight: 500;
+      transition: color 0.2s, text-decoration 0.2s;
+      border-bottom: 1.5px dashed #0af0;
+      padding-bottom: 2px;
+    }
+    .back-link:hover {
+      color: #08c;
+      text-decoration: underline;
+      border-bottom: 1.5px solid #08c;
+    }
+    .mode-toggle {
+      position: absolute;
+      left: 28px;
+      top: 28px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 22px;
+      padding: 10px 22px;
+      font-size: 1.08em;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      outline: none;
+      box-shadow: 0 1px 6px #0002;
+      z-index: 2;
+    }
+    .mode-toggle.light {
+      background: #eee;
+      color: #222;
+      box-shadow: 0 1px 6px #0077ff22;
+    }
+    .mode-toggle:active {
+      box-shadow: 0 2px 12px #0af3;
+    }
+    /* Light mode styles */
+    body.light-mode {
+      background: linear-gradient(135deg, #f6f6f6 0%, #e3e8f7 100%);
+      color: #181818;
+    }
+    body.light-mode .container {
+      background: #fff;
+      box-shadow: 0 2px 16px #0001, 0 1.5px 8px #0077ff11;
+    }
+    body.light-mode .car-meta {
+      background: #f0f0f0;
+      color: #222;
+    }
+    body.light-mode .car-title {
+      color: #0077ff;
+    }
+    body.light-mode .car-price {
+      color: #0077ff;
+    }
+    body.light-mode .back-link {
+      color: #0077ff;
+      border-bottom: 1.5px dashed #0077ff44;
+    }
+    body.light-mode .back-link:hover {
+      color: #0055bb;
+      border-bottom: 1.5px solid #0055bb;
+    }
+    body.light-mode .mode-toggle {
+      background: #eee;
+      color: #222;
+      box-shadow: 0 1px 6px #0077ff22;
+    }
+    body.light-mode .mode-toggle:active {
+      box-shadow: 0 2px 12px #0077ff33;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 18px 4vw 18px 4vw;
+        max-width: 98vw;
+      }
+      .car-title {
+        font-size: 1.4em;
+      }
+      .car-img {
+        min-height: 120px;
+      }
+      .mode-toggle {
+        left: 12px;
+        top: 12px;
+        padding: 7px 12px;
+        font-size: 0.98em;
+      }
+    }
+    /* Accessibility: focus styles */
+    .mode-toggle:focus, .back-link:focus {
+      outline: 2px solid #0af;
+      outline-offset: 2px;
+    }
+  </style>
+  <!-- Tajawal font for Arabic look -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <button class="mode-toggle" id="modeToggle">الوضع الفاتح</button>
+    <div id="carDetails">جاري التحميل...</div>
+    <a href="car-listing.html" class="back-link" id="back-link">← رجوع</a>
+  </div>
+  <script src="car-details.js"></script>
+  <script>
+    // Light/Dark mode toggle logic
+    const modeToggle = document.getElementById('modeToggle');
+    function setMode(light) {
+      if (light) {
+        document.body.classList.add('light-mode');
+        modeToggle.textContent = 'الوضع الداكن';
+        modeToggle.classList.add('light');
+      } else {
+        document.body.classList.remove('light-mode');
+        modeToggle.textContent = 'الوضع الفاتح';
+        modeToggle.classList.remove('light');
+      }
+    }
+    // Save mode in localStorage
+    function getSavedMode() {
+      return localStorage.getItem('colorMode') === 'light';
+    }
+    setMode(getSavedMode());
+    modeToggle.addEventListener('click', () => {
+      const isLight = !document.body.classList.contains('light-mode');
+      setMode(isLight);
+      localStorage.setItem('colorMode', isLight ? 'light' : 'dark');
+    });
+
+    // Back button fallback logic
+    document.getElementById('back-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = 'car-listing.html';
+      }
+    });
+  </script>
+</body>
+</html>

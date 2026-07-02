@@ -1,0 +1,15 @@
+{
+  "name": "car-dealership",
+  "version": "1.0.0",
+  "description": "A lightweight car listing website that allows users to search and filter cars by various criteria.",
+  "main": "src/server/app.js",
+  "scripts": {
+    "start": "node src/server/app.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

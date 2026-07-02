@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Car Listing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <style>
+    /* Reset & Base Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f6;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    select, input {
+      padding: 10px;
+      margin: 10px 10px 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    select:hover, input:hover, select:focus, input:focus {
+      border-color: #4f46e5;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    #filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #resultCount {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .cars-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Car Card Styling */
+    .car-card {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .car-info h3 {
+      font-size: 1.2rem;
+      color: #111827;
+    }
+
+    .car-type, .car-year {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 0.5rem;
+    }
+
+    .feature-tag {
+      background-color: #e5e7eb;
+      color: #374151;
+      padding: 5px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: #10b981;
+    }
+
+    /* View Details Button */
+    .details-btn {
+      margin-top: auto;
+      padding: 10px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .details-btn:hover {
+      background-color: #4338ca;
+    }
+
+    /* Responsive Stuff */
+    @media (max-width: 768px) {
+      #filters {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .car-card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML -->
+  <h1>Modern Car Listings</h1>
+  <div id="filters">
+    <input id="searchInput" placeholder="Search for a car..." />
+    <select id="brandFilter"><option value="">All Brands</option></select>
+    <select id="typeFilter"><option value="">All Types</option></select>
+    <select id="yearFilter"><option value="">All Years</option></select>
+    <select id="sortSelect">
+      <option value="">Sort By</option>
+      <option value="priceAsc">Price (Low to High)</option>
+      <option value="priceDesc">Price (High to Low)</option>
+      <option value="yearDesc">Year (Newest)</option>
+      <option value="yearAsc">Year (Oldest)</option>
+    </select>
+  </div>
+  <p id="resultCount">0 results</p>
+  <div id="carsContainer" class="cars-container"></div>
+
+  <!-- JavaScript -->
+  <script>
+    // Sample Data
+    const carsData = [
+      {
+        brand: "Toyota",
+        name: "Corolla",
+        year: 2020,
+        type: "Sedan",
+        price: 18000,
+        image: "https://source.unsplash.com/featured/?toyota,corolla",
+        features: ["Automatic", "Air Conditioning", "Bluetooth"]
+      },
+      {
+        brand: "Ford",
+        name: "Mustang",
+        year: 2022,
+        type: "Coupe",
+        price: 35000,
+        image: "https://source.unsplash.com/featured/?ford,mustang",
+        features: ["Manual", "Leather Seats", "Sport Mode"]
+      },
+      {
+        brand: "Tesla",
+        name: "Model 3",
+        year: 2023,
+        type: "Sedan",
+        price: 45000,
+        image: "https://source.unsplash.com/featured/?tesla,model3",
+        features: ["Electric", "Autopilot", "Panoramic Roof"]
+      },
+      {
+        brand: "Hyundai",
+        name: "Tucson",
+        year: 2021,
+        type: "SUV",
+        price: 26000,
+        image: "https://source.unsplash.com/featured/?hyundai,tucson",
+        features: ["Automatic", "AWD", "Navigation"]
+      },
+      {
+        brand: "BMW",
+        name: "X5",
+        year: 2019,
+        type: "SUV",
+        price: 52000,
+        image: "https://source.unsplash.com/featured/?bmw,x5",
+        features: ["Leather Seats", "Sunroof", "Bluetooth"]
+      },
+      {
+        brand: "Honda",
+        name: "Civic",
+        year: 2020,
+        type: "Sedan",
+        price: 20000,
+        image: "https://source.unsplash.com/featured/?honda,civic",
+        features: ["Automatic", "Cruise Control", "Backup Camera"]
+      }
+      // Add more cars as needed
+    ];
+
+    // Utility: Format price with commas
+    function formatPrice(price) {
+      return '$' + price.toLocaleString();
+    }
+
+    // Populate filter dropdowns dynamically
+    function populateFilters(data) {
+      const brandSet = new Set();
+      const yearSet = new Set();
+      const typeSet = new Set();
+
+      data.forEach(car => {
+        brandSet.add(car.brand);
+        yearSet.add(car.year);
+        typeSet.add(car.type);
+      });
+
+      const brandFilter = document.getElementById('brandFilter');
+      const yearFilter = document.getElementById('yearFilter');
+      const typeFilter = document.getElementById('typeFilter');
+
+      // Helper to populate options
+      function setOptions(select, values, label) {
+        select.innerHTML = `<option value="">All ${label}</option>`;
+        Array.from(values).sort((a, b) => {
+          if (typeof a === 'number') return b - a; // years descending
+          return a.localeCompare(b);
+        }).forEach(val => {
+          select.innerHTML += `<option value="${val}">${val}</option>`;
+        });
+      }
+
+      setOptions(brandFilter, brandSet, 'Brands');
+      setOptions(yearFilter, yearSet, 'Years');
+      setOptions(typeFilter, typeSet, 'Types');
+    }
+
+    // Filter cars based on search and filters
+    function filterCars(data, search, brand, year, type) {
+      return data.filter(car => {
+        const matchesSearch =
+          !search ||
+          (car.brand + ' ' + car.name).toLowerCase().includes(search.toLowerCase());
+        const matchesBrand = !brand || car.brand === brand;
+        const matchesYear = !year || car.year.toString() === year;
+        const matchesType = !type || car.type === type;
+        return matchesSearch && matchesBrand && matchesYear && matchesType;
+      });
+    }
+
+    // Sort cars based on selected sort option
+    function sortCars(data, sortOption) {
+      const sorted = [...data];
+      switch (sortOption) {
+        case 'priceAsc':
+          sorted.sort((a, b) => a.price - b.price);
+          break;
+        case 'priceDesc':
+          sorted.sort((a, b) => b.price - a.price);
+          break;
+        case 'yearAsc':
+          sorted.sort((a, b) => a.year - b.year);
+          break;
+        case 'yearDesc':
+          sorted.sort((a, b) => b.year - a.year);
+          break;
+        default:
+          // No sorting
+          break;
+      }
+      return sorted;
+    }
+
+    // Render car cards
+    function displayCars(data) {
+      const container = document.getElementById('carsContainer');
+      const resultCount = document.getElementById('resultCount');
+      container.innerHTML = '';
+      if (data.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; color:#888; font-size:1.2rem; padding:2rem;">No cars match your search.</div>`;
+        resultCount.textContent = '0 results';
+        return;
+      }
+      data.forEach((car, idx) => {
+        const card = document.createElement('div');
+        card.className = 'car-card';
+        card.setAttribute('data-id', idx + 1);
+        card.innerHTML = `
+          <img src="${car.image}" alt="${car.brand} ${car.name}">
+          <div class="car-info">
+            <h3>${car.brand} ${car.name}</h3>
+            <div class="car-type">Type: ${car.type}</div>
+            <div class="car-year">Year: ${car.year}</div>
+            <div class="features-list">
+              ${car.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
+            </div>
+            <div class="price">${formatPrice(car.price)}</div>
+            <button class="details-btn">View Details</button>
+          </div>
+        `;
+        // Add click event to button for navigation with fallback
+        card.querySelector('.details-btn').onclick = function() {
+          if (window.location.pathname.endsWith('car-details.html')) {
+            // Already on details page, just reload with new id
+            window.location.search = `?id=${idx + 1}`;
+          } else {
+            window.location.href = `car-details.html?id=${idx + 1}`;
+          }
+        };
+        container.appendChild(card);
+      });
+      resultCount.textContent = `${data.length} result${data.length > 1 ? 's' : ''}`;
+    }
+
+    // Main logic: combine filter, sort, search, and render
+    function updateDisplay() {
+      const search = document.getElementById('searchInput').value.trim();
+      const brand = document.getElementById('brandFilter').value;
+      const year = document.getElementById('yearFilter').value;
+      const type = document.getElementById('typeFilter').value;
+      const sortOption = document.getElementById('sortSelect').value;
+
+      let filtered = filterCars(carsData, search, brand, year, type);
+      let sorted = sortCars(filtered, sortOption);
+      displayCars(sorted);
+    }
+
+    // Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      populateFilters(carsData);
+      updateDisplay();
+
+      // Event listeners
+      document.getElementById('searchInput').addEventListener('input', updateDisplay);
+      document.getElementById('brandFilter').addEventListener('change', updateDisplay);
+      document.getElementById('yearFilter').addEventListener('change', updateDisplay);
+      document.getElementById('typeFilter').addEventListener('change', updateDisplay);
+      document.getElementById('sortSelect').addEventListener('change', updateDisplay);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2023,
+    "image": "https://toyota.com/imgix/responsive/images/mlp/colorizer/2023/camry/1J9/1.png"
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2022,
+    "image": "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2022/Civic-Sedan/Global-Assets/2022-Civic-Sedan-Touring-Modern-Steel-Metallic.png"
+  },
+  {
+    "make": "Ford",
+    "model": "Mustang",
+    "year": 2024,
+    "image": "https://www.ford.com/cmslibs/content/dam/brand_ford/en_us/brand/cars/mustang/2024/collections/dm/24_FRD_MST_wdmp_200505_01.png"
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2023,
+    "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/0e7e2c7e-7e5d-4e7e-9e7e-7e5d4e7e9e7e/bvlatuR/std/2880x1800/_25-Hero-D"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2023,
+    "image": "https://www.bmwusa.com/content/dam/bmwusa/3-series/sedan/2023/overview/BMW-MY23-G20-3Series-Sedan-Overview-01.png"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2023,
+    "image": "https://www.mbusa.com/content/dam/mb-nafta/us/myco/my23/c/class/sedan/all-vehicles/2023-C-SEDAN-AVP-DR.png"
+  },
+  {
+    "make": "Audi",
+    "model": "A4",
+    "year": 2023,
+    "image": "https://www.audiusa.com/content/dam/nemo/models/a4/my-2023/1920x1080_MY23_A4_hero.png"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Corvette",
+    "year": 2023,
+    "image": "https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2023/performance/corvette/mov/01-images/2023-corvette-stingray-masthead-01.png"
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2023,
+    "image": "https://www.hyundaiusa.com/images/vehicles/2023/elantra/360/elantra-limited-intense-blue.png"
+  },
+  {
+    "make": "Kia",
+    "model": "Sportage",
+    "year": 2023,
+    "image": "https://www.kia.com/content/dam/kwcms/au/en/images/vehicles/sportage/2023/overview/kia-sportage-gt-line-2023-hero.png"
+  }
+]

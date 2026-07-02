@@ -1,0 +1,51 @@
+Sure, here's the contents for the file `/car-dealership/car-dealership/src/data/cars.json`:
+
+{
+  "cars": [
+    {
+      "id": 1,
+      "year": 2020,
+      "type": "SUV",
+      "brand": "Toyota",
+      "model": "RAV4",
+      "price": 30000,
+      "description": "A reliable and spacious SUV with great fuel efficiency."
+    },
+    {
+      "id": 2,
+      "year": 2021,
+      "type": "Sedan",
+      "brand": "Honda",
+      "model": "Accord",
+      "price": 25000,
+      "description": "A comfortable sedan with advanced safety features."
+    },
+    {
+      "id": 3,
+      "year": 2023,
+      "type": "Truck",
+      "brand": "Ford",
+      "model": "F-150",
+      "price": 40000,
+      "description": "A powerful truck designed for heavy-duty performance."
+    },
+    {
+      "id": 4,
+      "year": 2019,
+      "type": "Coupe",
+      "brand": "Chevrolet",
+      "model": "Camaro",
+      "price": 35000,
+      "description": "A sporty coupe with a sleek design and powerful engine."
+    },
+    {
+      "id": 5,
+      "year": 2022,
+      "type": "Hatchback",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "price": 22000,
+      "description": "A compact hatchback with a fun driving experience."
+    }
+  ]
+}
