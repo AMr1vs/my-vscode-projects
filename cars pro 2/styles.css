@@ -1,0 +1,411 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #2c2c2c;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #ff0000;
+  border-radius: 5px;
+}
+
+/* Enhanced Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff0000;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+button,
+.btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+/* Car Cards */
+.car-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.car-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.car-card img {
+  width: 100%;
+  border-bottom: 2px solid #ff0000;
+}
+
+.car-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.car-card p {
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.car-card .btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.car-card .btn:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+/* Car Details Section */
+.car-details {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+
+car-details p {
+  margin: 0.5rem 0;
+}
+
+.btn-buy {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-buy:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+.btn-remove {
+  background-color: #555555;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  background-color: #444444;
+}
+
+/* Updated cart styles with red, black, and gray theme */
+.cart-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  /* Black background */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  /* White text for contrast */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333333;
+  /* Dark gray background */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  /* White text */
+}
+
+.cart-item img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.cart-item h3 {
+  font-size: 1.2em;
+  color: #ff0000;
+  /* Red text for emphasis */
+}
+
+.cart-item p {
+  color: #cccccc;
+  /* Light gray text */
+}
+
+.cart-item .btn {
+  background-color: #ff0000;
+  /* Red button */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item .btn:hover {
+  background-color: #e60000;
+  /* Darker red on hover */
+}
+
+.checkout-btn {
+  background-color: #ff0000;
+  /* Red button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #e60000;
+  /* Darker red on hover */
+}
+
+.home-btn {
+  background-color: #333333;
+  /* Dark gray button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #444444;
+  /* Slightly lighter gray on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-section {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Centering and enhancing text styles */
+.why-choose-us,
+.testimonials {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 20px auto;
+  max-width: 800px;
+  color: #333;
+}
+
+.why-choose-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-choose-us li {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.testimonials .testimonial {
+  margin: 20px 0;
+  font-style: italic;
+  font-size: 1.1em;
+  color: #666;
+}
+
+.testimonials .testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Styling for "View Details" button */
+.btn-view-details {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view-details:hover {
+  background-color: #0056b3;
+}
+
+/* Home button styling */
+.home-btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .car-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    margin-top: 1rem;
+  }
+}

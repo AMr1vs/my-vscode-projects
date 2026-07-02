@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+        <a href="index.html" class="home-btn">Home</a>
+    </header>
+
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="cart-empty">Your cart is empty</p>
+        <button class="btn checkout-btn" onclick="completeOrder()">Checkout</button>
+    </section>
+
+    <div id="purchase-alert" class="purchase-alert">
+        <p>Purchase successful!</p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+
+    <footer>
+        <div class="footer-section">
+            <p>All rights reserved to Cars-Pro</p>
+            <div class="socials">
+                <a href="https://twitter.com/" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://facebook.com/" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://instagram.com/" target="_blank" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function displayCart() {
+            const cartItemsContainer = document.getElementById("cart-items");
+            const cartEmptyMessage = document.getElementById("cart-empty");
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            if (cart.length === 0) {
+                cartEmptyMessage.style.display = "block";
+                cartItemsContainer.style.display = "none";
+            } else {
+                cartEmptyMessage.style.display = "none";
+                cartItemsContainer.style.display = "block";
+                cartItemsContainer.innerHTML = ""; // Clear previous items
+
+                cart.forEach((item) => {
+                    const cartItem = document.createElement("div");
+                    cartItem.classList.add("cart-item");
+
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <h3>${item.name}</h3>
+                        <p>Price: $${item.price}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                        <button class="btn" onclick="removeFromCart('${item.name}')">Remove</button>
+                    `;
+
+                    cartItemsContainer.appendChild(cartItem);
+                });
+            }
+        }
+
+        function removeFromCart(productName) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart = cart.filter((item) => item.name !== productName);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        function completeOrder() {
+            localStorage.removeItem("cart");
+            alert("Purchase completed successfully!");
+            displayCart();
+        }
+
+        function closeAlert() {
+            window.location.href = 'index.html';
+        }
+
+        document.addEventListener("DOMContentLoaded", displayCart);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const selectedCar = JSON.parse(localStorage.getItem('selectedCar'));
+            if (selectedCar) {
+                const cartItemsContainer = document.getElementById("cart-items");
+                const cartEmptyMessage = document.getElementById("cart-empty");
+
+                cartEmptyMessage.style.display = "none";
+                cartItemsContainer.style.display = "block";
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-item">
+                        <img src="${selectedCar.image}" alt="${selectedCar.name}" class="cart-item-image">
+                        <h3>${selectedCar.name}</h3>
+                        <p>Price: $${selectedCar.price}</p>
+                        <button class="btn" onclick="addToCart('${selectedCar.name}', ${selectedCar.price}, '${selectedCar.image}')">Add to Cart</button>
+                        <button class="btn" onclick="removeFromCart('${selectedCar.name}')">Remove</button>
+                    </div>
+                `;
+
+                // Clear selected car from localStorage after displaying
+                localStorage.removeItem('selectedCar');
+            }
+        });
+    </script>
+</body>
+
+</html>

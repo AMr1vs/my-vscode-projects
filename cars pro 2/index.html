@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars-Pro | Modern Car Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>Cars-Pro</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#listings">Cars</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Enhanced Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content" style="text-align: center; margin: 0 auto;">
+            <h1>Find Your Dream Car</h1>
+            <p>Explore our exclusive collection of luxury and performance cars.</p>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero car.jpg" alt="Hero Car">
+        </div>
+    </section>
+
+    <!-- Car Listings Section -->
+    <section id="listings" class="car-listings">
+        <h2>Our Cars</h2>
+        <div class="car-grid">
+            <div class="car-card">
+                <img src="images/mercedes s class.png" alt="Mercedes S Class">
+                <h3 style="text-align: center;">Mercedes S Class</h3>
+                <p style="text-align: center;">Price: $100,000</p>
+                <button class="btn-view-details">View Details</button>
+                <div class="car-details" style="display: none;">
+                    <p>Description: A flagship luxury sedan with cutting-edge features.</p>
+                    <button class="btn-buy">Buy</button>
+                    <button class="btn-remove">Remove from Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/bmw 7 series.png" alt="BMW 7 Series">
+                <h3 style="text-align: center;">BMW 7 Series</h3>
+                <p style="text-align: center;">Price: $90,000</p>
+                <button class="btn-view-details">View Details</button>
+                <div class="car-details" style="display: none;">
+                    <p>Description: A luxury sedan with advanced technology and comfort.</p>
+                    <button class="btn-buy">Buy</button>
+                    <button class="btn-remove">Remove from Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/audi r8.png" alt="Audi R8">
+                <h3 style="text-align: center;">Audi R8</h3>
+                <p style="text-align: center;">Price: $120,000</p>
+                <button class="btn-view-details">View Details</button>
+                <div class="car-details" style="display: none;">
+                    <p>Description: A high-performance sports car with a V10 engine.</p>
+                    <button class="btn-buy">Buy</button>
+                    <button class="btn-remove">Remove from Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/lexus ls.png" alt="Lexus LS">
+                <h3 style="text-align: center;">Lexus LS</h3>
+                <p style="text-align: center;">Price: $80,000</p>
+                <button class="btn-view-details">View Details</button>
+                <div class="car-details" style="display: none;">
+                    <p>Description: A premium sedan with exceptional craftsmanship.</p>
+                    <button class="btn-buy">Buy</button>
+                    <button class="btn-remove">Remove from Cart</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/tesla model s.png" alt="Tesla Model S">
+                <h3 style="text-align: center;">Tesla Model S</h3>
+                <p style="text-align: center;">Price: $110,000</p>
+                <button class="btn-view-details">View Details</button>
+                <div class="car-details" style="display: none;">
+                    <p>Description: An all-electric luxury sedan with impressive range.</p>
+                    <button class="btn-buy">Buy</button>
+                    <button class="btn-remove">Remove from Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <ul>
+            <li>Warranty Included</li>
+            <li>Financing Available</li>
+            <li>Certified Cars</li>
+            <li>Trade-In Options</li>
+        </ul>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>Customer Testimonials</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <p>"Great service and amazing cars!"</p>
+                <span>- John Doe</span>
+            </div>
+            <div class="testimonial">
+                <p>"I found my dream car here. Highly recommend!"</p>
+                <span>- Jane Smith</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Contact us: (555) 123-4567 | email@example.com</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+        <p>Made by: عمرو شريف, احمد مجدي, فادي جرجس</p>
+    </footer>
+
+    <script>
+        function addToCart(productName, productPrice, productImage) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            let existingProduct = cart.find(item => item.name === productName);
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'cart.html';
+        }
+
+        document.querySelectorAll('.btn-view-details').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const carCard = event.target.closest('.car-card');
+                const name = carCard.querySelector('h3').textContent;
+                const price = parseFloat(carCard.querySelector('p').textContent.replace(/[^0-9.]/g, ''));
+                const image = carCard.querySelector('img').src;
+
+                // Save car details to localStorage
+                localStorage.setItem('selectedCar', JSON.stringify({ name, price, image }));
+
+                // Redirect to the cart page
+                window.location.href = 'cart.html';
+            });
+        });
+    </script>
+</body>
+
+</html>
