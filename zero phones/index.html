@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Zero Phones</title>
+</head>
+
+<body>
+    <header>
+        <h1>Zero Phones</h1>
+    </header>
+    <!-- NAVBAR SECTION -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-mobile"></i>
+            <h4>Zero Phones</h4>
+        </div>
+        <ul class="nav-items">
+            <li><a href="#" class="nav-link">الصفحة الرئيسية</a></li>
+            <li><a href="#features" class="nav-link">ميزاتنا</a></li>
+            <li><a href="#phones" class="nav-link">احدث الهواتف</a></li>
+        </ul>
+        <div class="bars-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-section">
+            <div class="content">
+                <h4>تسوق الكتروني</h4>
+                <h1>اكتشف احدث الهواتف بافضل الاسعار</h1>
+                <button class="btn">اطلب الآن</button>
+            </div>
+            <div class="hero-image">
+                <img src="./zero phones/images/smartphone.jpg" alt="Hero Image">
+            </div>
+    </section>
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <div class="features-section">
+            <h4>ميزاتنا</h4>
+            <div class="qualities">
+                <div class="quality">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>توصيل سريع</h3>
+                    <p>طلب هيوصل لحد بيتك خلال 2-4 ايام</p>
+                </div>
+                <div class="quality">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>حماية وامان</h3>
+                    <p>حماية اثناء الدفع</p>
+                </div>
+                <div class="quality">
+                    <i class="fas fa-sort-amount-up-alt"></i>
+                    <h3>تشكيلة واسعة</h3>
+                    <p>لدينا احدث الهواتف</p>
+                </div>
+                <div class="quality">
+                    <i class="fas fa-phone-square"></i>
+                    <h3>دعم فني</h3>
+                    <p>دعم فني لحل جميع مشاكلك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWEST PHONES -->
+    <section class="newest-phones" id="phones">
+        <div class="phones-section">
+            <h4>احدث الهواتف</h4>
+            <div class="phones">
+                <div class="phone">
+                    <img src="./zero phones/images/iphone 15 pro max.png" alt="iPhone 15 Pro Max">
+                    <h3>iPhone 15 Pro Max</h3>
+                    <h3>المواصفات:</h3>
+                    <p>الشاشة: 6.7 بوصة LTPO Super Retina XDR OLED, 120Hz</p>
+                    <p>الذاكرة الداخلية: 256/512 جيجابايت - 1 تيرابايت</p>
+                    <p>المعالج: Apple A17 Pro</p>
+                    <h1>السعر: 1400$</h1>
+                    <button class="btn"
+                        onclick="addToCart('iPhone 15 Pro Max', 1400, './zero phones/images/iphone 15 pro max.png')">شراء</button>
+                </div>
+                <div class="phone">
+                    <img src="./zero phones/images/galaxy 24 ultra.png" alt="Samsung Galaxy S24 Ultra">
+                    <h3>Samsung Galaxy S24 Ultra</h3>
+                    <h3>المواصفات:</h3>
+                    <p>الشاشة: 6.8 بوصة Dynamic AMOLED 2X, 120Hz</p>
+                    <p>الذاكرة الداخلية: 256/512 جيجابايت - 1 تيرابايت</p>
+                    <p>المعالج: Snapdragon 8 Gen 3</p>
+                    <h1>السعر: 1300$</h1>
+                    <button class="btn" onclick="window.location.href='cart.html'">شراء</button>
+                </div>
+                <div class="phone">
+                    <img src="./zero phones/images/google pixel 9 pro.png" alt="Google Pixel 9 Pro">
+                    <h3>Google Pixel 9 Pro</h3>
+                    <h3>المواصفات:</h3>
+                    <p>الشاشة: 6.7 بوصة LTPO OLED, 120Hz</p>
+                    <p>الذاكرة الداخلية: 128/256/512 جيجابايت</p>
+                    <p>المعالج: Google Tensor G4</p>
+                    <h1>السعر: 1100$</h1>
+                    <button class="btn" onclick="window.location.href='cart.html'">شراء</button>
+                </div>
+                <div class="phone">
+                    <img src="./zero phones/images/xiaomi 14 ultra.png" alt="Xiaomi 14 Ultra">
+                    <h3>Xiaomi 14 Ultra</h3>
+                    <h3>المواصفات:</h3>
+                    <p>الشاشة: 6.73 بوصة LTPO AMOLED, 120Hz</p>
+                    <p>الذاكرة الداخلية: 256/512 جيجابايت - 1 تيرابايت</p>
+                    <p>المعالج: Snapdragon 8 Gen 3</p>
+                    <h1>السعر: 1200$</h1>
+                    <button class="btn" onclick="window.location.href='cart.html'">شراء</button>
+                </div>
+                <div class="phone">
+                    <img src="./zero phones/images/one plus 12.png" alt="OnePlus 12">
+                    <h3>OnePlus 12</h3>
+                    <h3>المواصفات:</h3>
+                    <p>الشاشة: 6.82 بوصة LTPO AMOLED, 120Hz</p>
+                    <p>الذاكرة الداخلية: 256/512 جيجابايت</p>
+                    <p>المعالج: Snapdragon 8 Gen 3</p>
+                    <h1>السعر: 900$</h1>
+                    <button class="btn" onclick="window.location.href='cart.html'">شراء</button>
+                </div>
+            </div>
+            <button class="btn">
+                <a href="#">عرض المزيد من الهواتف</a>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-section">
+            <p>جميع الحقوق محفوظة لموقع Zero Phones</p>
+
+            <div class="socials">
+                <a href="https://twitter.com/" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://facebook.com/" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://instagram.com/" target="_blank" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body </html>

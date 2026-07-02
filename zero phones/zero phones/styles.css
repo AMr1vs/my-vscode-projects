@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.top-bar {
+  background-color: #0e0aef;
+  color: #ffffff;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1366px;
+  height: 10vh;
+  margin: 0 auto;
+  padding: 0 5rem;
+}
+
+nav .logo {
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+}
+
+nav .logo i {
+  color: #0e0aef;
+  padding-left: 0.75rem;
+}
+
+nav .fa-bars {
+  display: none;
+}
+
+nav .logo h4 {
+  font-family: 'Lalezar', cursive;
+}
+
+nav .nav-items {
+  display: flex;
+  list-style-type: none;
+}
+
+nav .nav-items .nav-items {
+  padding: 0 1rem;
+}
+
+nav .nav-link {
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+nav .nav-link:hover {
+  color: #4e547e;
+}
+
+.hero {
+  background-color: #f8f7fc;
+}
+
+.hero-section {
+  max-width: 1366px;
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 5rem;
+}
+
+hero-section .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section h4 {
+  color: #0e0aef;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section .content h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  color: rgb(29, 29, 29);
+  font-size: 1.4rem;
+}
+
+/* Ensure the hero image is styled correctly */
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 10rem;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background-color: #0e0aef;
+}
+
+.btn:hover {
+  background-color: #0e0aef;
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+section.features {
+  padding: 2rem 0;
+  background-color: #f8f7fc;
+}
+
+section.features .features-section {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.features-section h4 {
+  color: #0e0aef;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.features-section .qualities {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features-section .qualities .quality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  max-width: 17rem;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+.features-section .qualities .quality:hover {
+  border: 2px solid #0e0aef;
+}
+
+.qualities .quality i {
+  font-size: 2rem;
+  color: #0e0aef;
+  margin-bottom: 1rem;
+}
+
+.qualities .quality h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.qualities .quality p {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #4e547e;
+}
+
+.newest-phones {
+  padding-top: 5rem;
+}
+
+.phones-section {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.phones-section h4 {
+  color: #0e0aef;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.phones-section .phones {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: flex-start;
+}
+
+.phone {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.phone:hover .card {
+  transform: rotateY(180deg);
+  border: 2px solid #0e0aef;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card-front img {
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.card-back h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card-back p,
+.card-back h1 {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.btn {
+  width: 5rem;
+  padding: 0.5rem;
+  background-color: #0e0aef;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.phones-section button {
+  width: 15rem;
+  margin-bottom: 1rem;
+  align-self: center;
+  margin-top: 0.5rem;
+}

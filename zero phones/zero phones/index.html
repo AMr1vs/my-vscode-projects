@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Smart Device</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+
+
+<body onload="checkLogin()">
+
+
+
+  <div class="top-bar">
+    🚀 شحن مجاني للطلبات فوق 300 دولار — استخدم كود: <strong>FREESHIP</strong> 🎁
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- NAVBAR SECTION -->
+  <nav>
+    <div class="logo">
+      <i class="fas fa-mobile"></i>
+      <h4>Smart Device</h4>
+    </div>
+    <ul class="nav-items">
+      <li class="nav-items">
+        <a href="#" class="nav-link" data-key="home">الصفحة الرئيسية</a>
+      </li>
+      <li class="nav-items">
+        <a href="#features" class="nav-link" data-key="features">ميزاتنا</a>
+      </li>
+      <li class="nav-items">
+        <a href="#phones" class="nav-link" data-key="latest">احدث الهواتف</a>
+      </li>
+
+
+      <!-- قائمة إعدادات صغيرة -->
+      <li class="nav-item dropdown">
+        <button class="dropdown-btn">
+          <i class="fas fa-cogs"></i> <!-- أيقونة الإعدادات -->
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#" id="language-toggle" data-key="change_language">تغيير اللغة</a></li>
+          <li><a href="logout.html" data-key="logout">تسجيل الخروج</a></li>
+        </ul>
+    </ul>
+
+    <div class="bars-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <div class="hero-section">
+    <div class="content">
+      <h4 data-aos="fade-up" data-key="welcome">أهلا بك</h4>
+      <h1 data-aos="fade-right" data-aos-duration="1500" data-key="hero_title">موقعنا الأفضل لشراء الهواتف</h1>
+      <p data-aos="fade-up" data-aos-delay="300" data-key="hero_desc">احصل على أحدث الأجهزة بأفضل الأسعار</p>
+      <button class="btn" data-aos="zoom-in" data-aos-delay="600"><a href="#" data-key="order_now">اطلب
+          الآن</a></button>
+    </div>
+    <img src="./images/smartphone.png" alt="hero image" data-aos="fade-left" data-aos-duration="2000">
+  </div>
+
+
+
+
+
+
+  <!--<section class="hero" id="hero">
+    <div class="hero-section">
+        <div class="content">
+            <h4>تسوق الكتروني</h4>
+            <h1>اكتشف احدث الهواتف بافضل الاسعار</h1>
+            <p>متجر الكتروني لشراء كل ما هو متعلق بالهواتف.</p>
+            <button class="btn">
+                <a href="#features">اعرف المزيد</a>
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="./images/smartphone.png" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!- FEATURES SECTION -->
+  <section class="features" id="features">
+    <div class="features-section">
+      <h4 data-key="features_title">ميزاتنا</h4>
+      <div class="qualities">
+        <div class="quality">
+          <i class="fas fa-shipping-fast"></i>
+          <h3 data-key="fast_delivery_title">توصيل سريع</h3>
+          <p data-key="fast_delivery_desc">طلب هيوصل لحد بيتك خلال 2-4 ايام</p>
+        </div>
+        <div class="quality">
+          <i class="fas fa-user-shield"></i>
+          <h3 data-key="secure_payment_title">حماية وامان</h3>
+          <p data-key="secure_payment_desc">حماية اثناء الدفع</p>
+        </div>
+        <div class="quality">
+          <i class="fas fa-sort-amount-up-alt"></i>
+          <h3 data-key="wide_selection_title">تشكيلة واسعة</h3>
+          <p data-key="wide_selection_desc">لدينا احدث الهواتف</p>
+        </div>
+        <div class="quality">
+          <i class="fas fa-phone-square"></i>
+          <h3 data-key="support_title">دعم فني</h3>
+          <p data-key="support_desc">دعم فني لحل جميع مشاكلك</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- iPhone -->
+
+  <section class="newest-phones" id="phones">
+    <div class="phones-section">
+      <h4 data-key="latest">احدث الهواتف</h4>
+      <div class="phones">
+        <div class="phone">
+          <div class="card">
+            <div class="card-front">
+              <img src="./images/Apple-iPhone-13-Pro-Max.jpg" alt="Iphone 13 pro max">
+            </div>
+            <div class="card-back">
+              <h3>iPhone 13 Pro Max</h3>
+              <h3 data-key="specifications">المواصفات:</h3>
+              <p data-key="screen">الشاشة 6.7 بوصة - 120 هرتز - Super Retina XDR OLED</p>
+              <p data-key="memory">الذاكرة: 128/256/512 جيجابايت - 1 تيرابايت</p>
+              <p data-key="processor">المعالج: Apple A15 Bionic</p>
+              <h1 data-key="price">السعر: 1000$</h1>
+              <button class="btn"
+                onclick="addToCart('iPhone 13 Pro Max', 1000, './images/Apple-iPhone-13-Pro-Max.jpg')"><a href="#"
+                  data-key="buy_now">شراء</a></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLU R1 HD -->
+        <div class="phone">
+          <div class="card">
+            <div class="card-front">
+              <img src="./images/BLU-R1-HD.jpg" alt="Blu r1 hd">
+            </div>
+            <div class="card-back">
+              <h3>BLU R1 HD</h3>
+              <h3 data-key="specifications">المواصفات:</h3>
+              <p data-key="screen">الشاشة: 5 بوصة</p>
+              <p data-key="memory">الذاكرة: 8GB أو 16GB</p>
+              <p data-key="ram">الرام: 1GB أو 2GB</p>
+              <p data-key="processor">المعالج: MT6735</p>
+              <h1 data-key="price">السعر: 100$</h1>
+              <button class="btn" onclick="addToCart('Blu r1 hd', 100, './imageS/BLU-R1-HD.jpg')"><a href="#"
+                  data-key="buy_now">شراء</a></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samsung Galaxy A1 -->
+        <div class="phone">
+          <div class="card">
+            <div class="card-front">
+              <img src="./images/Samsung-Galaxy-A1.jpg" alt="Samsung galaxy a1">
+            </div>
+            <div class="card-back">
+              <h3>Samsung Galaxy A1</h3>
+              <h3 data-key="specifications">المواصفات:</h3>
+              <p data-key="screen">الشاشة: 5.7 بوصة - HD+</p>
+              <p data-key="memory">الذاكرة: 16 جيجا</p>
+              <p data-key="ram">الرام: 2 جيجا</p>
+              <p data-key="processor">المعالج: Snapdragon 439</p>
+              <h1 data-key="price">السعر: 300$</h1>
+              <button class="btn" onclick="addToCart('Samsung galaxy a1', 300, './images/Samsung-Galaxy-A1.jpg')"><a
+                  href="#" data-key="buy_now">شراء</a></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Xiaomi Poco X3 -->
+        <div class="phone">
+          <div class="card">
+            <div class="card-front">
+              <img src="./images/Xiaomi--Poco-X3.jpg" alt="Xiaomi poco x3">
+            </div>
+            <div class="card-back">
+              <h3>Xiaomi Poco X3</h3>
+              <h3 data-key="specifications">المواصفات:</h3>
+              <p data-key="screen">الشاشة: 6.67 بوصة - FHD+</p>
+              <p data-key="memory">الذاكرة: 64/128 جيجا</p>
+              <p data-key="ram">الرام: 6 جيجا</p>
+              <p data-key="processor">المعالج: Snapdragon 732G</p>
+              <h1 data-key="price">السعر: 500$</h1>
+              <button class="btn" onclick="addToCart('Xiaomi poco x3', 500, './images/Xiaomi--Poco-X3.jpg')"><a href="#"
+                  data-key="buy_now">شراء</a></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Xiaomi Redmi Note 9S -->
+        <div class="phone">
+          <div class="card">
+            <div class="card-front">
+              <img src="./images/Xiaomi--Redmi-Note-9S.jpg" alt="Xiaomi redmi note 9s.jpg">
+            </div>
+            <div class="card-back">
+              <h3>Xiaomi Redmi Note 9S</h3>
+              <h3 data-key="specifications">المواصفات:</h3>
+              <p data-key="screen">الشاشة: 6.67 بوصة - FHD+</p>
+              <p data-key="memory">الذاكرة: 64/128 جيجا</p>
+              <p data-key="ram">الرام: 4/6 جيجا</p>
+              <p data-key="processor">المعالج: Snapdragon 720G</p>
+              <h1 data-key="price">السعر: 400$</h1>
+              <button class="btn"
+                onclick="addToCart('Xiaomi redmi note 9s', 400, './images/Xiaomi--Redmi-Note-9S.jpg')"><a href="#"
+                  data-key="buy_now">شراء</a></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- One Plus 8 -->
+        <div class="phone">
+          <div class="card">
+            <div class="card-front">
+              <img src="./images/one-plus.jpg" alt="One plus">
+            </div>
+            <div class="card-back">
+              <h3>One Plus 8</h3>
+              <h3 data-key="specifications">المواصفات:</h3>
+              <p data-key="screen">الشاشة: 6.55 بوصة - FHD+</p>
+              <p data-key="memory">الذاكرة: 128/256 جيجا</p>
+              <p data-key="ram">الرام: 8/12 جيجا</p>
+              <p data-key="processor">المعالج: Snapdragon 865</p>
+              <h1 data-key="price">السعر: 600$</h1>
+              <button class="btn" onclick="addToCart('One plus', 600, './images/one-plus.jpg')"><a href="#"
+                  data-key="buy_now">شراء</a></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="btn">
+        <a href="#" data-key="view_more">عرض المزيد من الهواتف</a>
+      </button>
+    </div>
+  </section>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- NEWEST PHONES-->
+<!--
+<section class="newest-phones" id="phones">
+    <div class="phones-section">
+        <h4>احدث الهواتف</h4>
+        <div class="phones">
+            <div class="phone">
+                <img src="./images/Apple-iPhone-13-Pro-Max.jpg" alt="Iphone 13 pro max">
+                <h3>iphone 13 pro max</h3>
+                <h3>المواصفات:</h3>
+                <p>الشاشة6.7 بوصة - 120 هرتز - Super Retina XDR OLED</p>
+                <p>الذاكرة الداخلية:128/256/512 جيجابايت - 1 تيرابايت
+                    /المعالج:Apple A15 Bionic
+                </p>
+                <h1>السعر:1000$</h1>
+                <button class="btn">
+                    <a href="cart.html" onclick="addToCart('Samsung Galaxy A1', 300)">شراء</a>
+                </button>
+            -->
+
+
+
+<!--<button class="btn">
+                <a href="#button">شراء</a>
+                </button>-->
+
+
+
+<!--
+            </div>
+            <div class="phone">
+                <img src="./images/BLU-R1-HD.jpg" alt="Blu r1 hd">
+                <h3>BLU R1 HD</h3>
+                <h3>المواصفات:</h3>
+                <p>الشاشة: 5 بوصة</p>
+                <p>التخزين (الهارد): 8GB او 16GB</p>
+                <p>الذاكرة العشوائية (الرام): 1GB او 2GB</p>
+                <p>المعالج: MT6735</p>
+                <h1>السعر:
+                    100$
+                </h1>
+                <button class="btn">
+                    <a href="#blu">شراء</a>
+                </button>
+            </div>
+            <div class="phone">
+                <img src="./images/Samsung-Galaxy-A1.jpg" alt="Samsung galaxy a1">
+                <h3>Samsung Galaxy A1</h3>
+                <h3>المواصفات:</h3>
+                <p>الشاشة: 5.7 بوصة بدقة HD+ بها نوتش صغير</p>
+                <p>التخزين / الرام: 16 جيجا مع 2 جيجا رام</p>
+                <p>المعالج: Snapdragon 439 ثماني النواة بتكنولوجيا 12 نانو</p>
+                <h1>السعر:
+                    300$
+                </h1>
+                <button class="btn">
+                    <a href="#A1">شراء</a>
+                </button>
+            </div>
+            <div class="phone">
+                <img src="./images/Xiaomi--Poco-X3.jpg" alt="Xiaomi poco x3">
+                <h3>Xiaomi Poco X3</h3>
+                <h3>المواصفات:</h3>
+                <p>الشاشة: 6.67 بوصة بدقة FHD+ بها ثقب صغير</p>
+                <p>التخزين / الرام: 64/128 جيجا مع 6 جيجا رام</p>
+                <p>المعالج: ثماني النواة Snapdragon 732G تكنولوجيا 8 نانو</p>
+                <h1>السعر:
+                    500$
+                </h1>
+                <button class="btn">
+                    <a href="#X">شراء</a>
+                </button>
+            </div>
+            <div class="phone">
+                <img src="./images/Xiaomi--Redmi-Note-9S.jpg" alt="Xiaomi redmi note 9s">
+                <h3>Xiaomi Redmi Note 9S</h3>
+                <h3>المواصفات:</h3>
+                <p>الشاشة: 6.67 بوصة بدقة FHD+ بها ثقب صغير</p>
+                <p>التخزين / الرام: 64/128 جيجا مع 4/6 جيجا رام</p>
+                <p>المعالج: ثماني النواة Snapdragon 720G تكنولوجيا 8 نانو</p>
+                <h1>السعر:
+                    400$
+                </h1>
+                <button class="btn">
+                    <a href="#note">شراء</a>
+                </button>
+            </div>
+            <div class="phone">
+                <img src="./images/one-plus.jpg" alt="One plus">
+                <h3>One Plus 8</h3>
+                <h3>المواصفات:</h3>
+                <p>الشاشة: 6.55 بوصة بدقة FHD+ بها ثقب صغير</p>
+                <p>التخزين / الرام: 128/256 جيجا مع 8/12 جيجا رام</p>
+                <p>المعالج: ثماني النواة Snapdragon 865 تكنولوجيا 7 نانو</p>
+                <h1>السعر:
+                    600$
+                </h1>
+                <button class="btn">
+                    <a href="#one">شراء</a>
+                </button>
+            </div>
+        </div>
+        <button class="btn">
+            <a href="#">عرض المزيد من الهواتف</a>
+        </button>
+    </div>
+</section>
+-->
+
+<!-- Payment Methods Section -->
+<section class="payment-methods">
+  <h2 class="section-title" data-key="payment_methods_title">وسائل الدفع المدعومة</h2><!-- العنوان فوق الأيقونات -->
+  <div class="payment-icons">
+    <div class="payment-item">
+      <i class="fab fa-visa"></i>
+
+    </div>
+    <div class="payment-item">
+      <i class="fab fa-cc-visa"></i>
+      <p data-key="visa">فيزا</p>
+    </div>
+    <div class="payment-item">
+      <i class="fab fa-apple-pay"></i>
+      <p data-key="apple_pay">Apple Pay</p>
+    </div>
+    <div class="payment-item">
+      <i class="fab fa-paypal"></i>
+      <p data-key="paypal">PayPal</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="stats-section">
+  <h4 data-key="quick_stats">إحصائيات سريعة</h4>
+  <div class="stat">
+    <h3><span class="counter" data-target="500">0</span>+</h3>
+    <p data-key="orders_completed">طلب مكتمل</p>
+  </div>
+  <div class="stat">
+    <h3><span class="counter" data-target="200">0</span></h3>
+    <p data-key="happy_clients">عميل سعيد</p>
+  </div>
+  <div class="stat">
+    <h3><span class="counter" data-target="100">0</span>+</h3>
+    <p data-key="available_products">منتج متاح</p>
+  </div>
+</section>
+
+
+<section class="testimonials">
+  <h4 data-key="testimonials_title">آراء عملائنا</h4>
+  <div class="reviews">
+
+    <div class="review-card">
+      <img src="./images/User 1.png" alt="User 1">
+      <h3 data-key="review_name_1">أحمد علي</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p data-key="review_text_1">موقع ممتاز! سرعة في التوصيل ومنتجات أصلية.</p>
+    </div>
+
+    <div class="review-card">
+      <img src="./images/User 2.png" alt="User 2">
+      <h3 data-key="review_name_2">سارة محمد</h3>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <p data-key="review_text_2">خدمة رائعة والأسعار منافسة. أنصح به بشدة!</p>
+    </div>
+
+    <div class="review-card">
+      <img src="./images/User 3.jpg" alt="User 3">
+      <h3 data-key="review_name_3">خالد يوسف</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p data-key="review_text_3">تجربة مميزة ومنتجات بجودة عالية جدًا.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Footer section -->
+<footer>
+  <div class="footer-section">
+    <p data-key="footer_rights">جميع الحقوق محفوظة لموقع Smart Device</p>
+    <div class="socials">
+      <a href="https://twitter.com/" target="_blank" class="fab fa-twitter"></a>
+      <a href="https://facebook.com/" target="_blank" class="fab fa-facebook"></a>
+      <a href="https://instagram.com/" target="_blank" class="fab fa-instagram"></a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="./script.js"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init();
+  });
+
+</script>
+
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 150; // السرعة
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  // دالة لإضافة المنتج إلى سلة المشتريات
+  function addToCart(productName, productPrice, productImage) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // تحقق من وجود المنتج في السلة
+    let existingProduct = cart.find(item => item.name === productName);
+    if (existingProduct) {
+      existingProduct.quantity += 1; // زيادة الكمية بمقدار واحد إذا كان المنتج موجوداً
+    } else {
+      cart.push({
+        name: productName,
+        price: productPrice,
+        image: productImage,
+        quantity: 1
+      });
+    }
+
+    // تخزين السلة في localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // الانتقال إلى صفحة سلة المشتريات
+    window.location.href = "cart.html";
+  }
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<button class="checkout-btn" onclick="checkout()">دفع</button>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<script>
+    // تحديد العناصر الخاصة بالمحتوى
+    const languageToggle = document.getElementById("language-toggle");
+    const heading = document.getElementById("heading");
+    const description = document.getElementById("description");
+  
+    // النصوص الخاصة باللغة العربية والإنجليزية
+    const texts = {
+      arabic: {
+        heading: "مرحبًا بك في موقعنا",
+        description: "هذا الموقع يقدم لك أفضل المنتجات الإلكترونية."
+      },
+      english: {
+        heading: "Welcome to our site",
+        description: "This site offers you the best electronic products."
+      }
+    };
+  
+    // إعداد اللغة الافتراضية (العربية)
+    let currentLanguage = "arabic";
+  
+    // تغيير اللغة عند الضغط على "تغيير اللغة"
+    languageToggle.addEventListener("click", () => {
+      if (currentLanguage === "arabic") {
+        // تغيير النصوص إلى الإنجليزية
+        heading.innerText = texts.english.heading;
+        description.innerText = texts.english.description;
+        languageToggle.innerText = "Change Language to Arabic"; // تغيير نص الزر
+        currentLanguage = "english";
+      } else {
+        // تغيير النصوص إلى العربية
+        heading.innerText = texts.arabic.heading;
+        description.innerText = texts.arabic.description;
+        languageToggle.innerText = "تغيير اللغة إلى الإنجليزية"; // تغيير نص الزر
+        currentLanguage = "arabic";
+      }
+    });
+  </script>
+  
+
+<button onclick="logout()">تسجيل الخروج</button>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- الشات بوت -->
+<div id="chatbot" class="chatbot-container" style="display: none;">
+  <div class="chatbot-header">
+    <span>شات بوت</span>
+    <button onclick="toggleChatbot()">×</button>
+  </div>
+  <div id="chatbot-messages" class="chatbot-messages">
+    <!-- الرسائل ستظهر هنا -->
+  </div>
+  <input type="text" id="chatbot-input" placeholder="اكتب هنا..." onkeyup="sendMessage(event)" />
+</div>
+
+<!-- زر لفتح الشات بوت -->
+<button id="chatbot-toggle" onclick="toggleChatbot()">🗨️</button>
+
+<!-- الكود البرمجي -->
+<script>
+  // بيانات المنتجات
+  const products = [
+    {
+      name: "Iphone 13 pro max",
+      price: 1000,
+      image: "./images/Apple-iPhone-13-Pro-Max.jpg"
+    },
+    {
+      name: "Blu r1 hd",
+      price: 100,
+      image: "./images/BLU-R1-HD.jpg"
+    },
+    {
+      name: "Samsung galaxy a1",
+      price: 300,
+      image: "./images/Samsung-Galaxy-A1.jpg"
+    },
+    {
+      name: "Xiaomi poco x3",
+      price: 500,
+      image: "./images/Xiaomi--Poco-X3.jpg"
+    },
+    {
+      name: "Xiaomi redmi note 9s",
+      price: 400,
+      image: "./images/Xiaomi--Redmi-Note-9S.jpg"
+    },
+    {
+      name: "One plus",
+      price: 600,
+      image: "./images/one-plus.jpg"
+    }
+  ];
+
+  // إظهار / إخفاء الشات بوت
+  function toggleChatbot() {
+    const chatbot = document.getElementById("chatbot");
+    chatbot.style.display = (chatbot.style.display === "none" || chatbot.style.display === "") ? "flex" : "none";
+  }
+
+  // إرسال الرسالة من المستخدم
+  function sendMessage(event) {
+    const input = document.getElementById("chatbot-input");
+    const message = input.value.trim();
+
+    if (event.key === "Enter" && message !== "") {
+      addMessage("user", message);  // رسالة المستخدم
+      input.value = '';  // مسح الإدخال
+
+      // استجابة الشات بوت
+      setTimeout(() => {
+        getBotResponse(message);
+      }, 500);
+    }
+  }
+
+  // إضافة الرسائل إلى الواجهة
+  function addMessage(sender, message, image = null) {
+    const messageContainer = document.createElement("div");
+    messageContainer.classList.add(sender);
+
+    // نص الرسالة
+    const textElement = document.createElement("div");
+    textElement.innerText = message;
+    messageContainer.appendChild(textElement);
+
+    // صورة إذا وُجدت
+    if (image) {
+      const imgElement = document.createElement("img");
+      imgElement.src = image;
+      imgElement.alt = "صورة المنتج";
+      imgElement.style.width = "150px";
+      imgElement.style.marginTop = "5px";
+      messageContainer.appendChild(imgElement);
+    }
+
+    document.getElementById("chatbot-messages").appendChild(messageContainer);
+    document.getElementById("chatbot-messages").scrollTop = document.getElementById("chatbot-messages").scrollHeight;
+  }
+
+  // استجابة الشات بوت
+  function getBotResponse(userMessage) {
+    // محاولة استخراج السعر من الرسالة
+    const priceMatch = userMessage.match(/\d+/);
+    if (priceMatch) {
+      const price = parseInt(priceMatch[0]);
+      const foundProduct = products.find(product => product.price === price);
+
+      if (foundProduct) {
+        addMessage("bot", `✅ هذا المنتج بسعر ${price}$: ${foundProduct.name}`, foundProduct.image);
+      } else {
+        addMessage("bot", `❌ لا يوجد منتج بهذا السعر (${price}$).`);
+      }
+    } else if (userMessage.includes("مرحبا")) {
+      addMessage("bot", "أهلاً! كيف يمكنني مساعدتك اليوم؟");
+    } else if (userMessage.includes("كيف حالك")) {
+      addMessage("bot", "أنا بخير، شكراً على سؤالك!");
+    } else {
+      addMessage("bot", "🤖 لم أفهم، هل يمكنك كتابة السعر الذي تبحث عنه؟");
+    }
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- الشات بوت -->
+<!--
+<div id="chatbot" class="chatbot-container">
+    <div class="chatbot-header">
+      <span>شات بوت</span>
+      <button onclick="toggleChatbot()">×</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages">
+    -->
+<!-- الرسائل ستظهر هنا -->
+<!--
+    </div>
+    <input type="text" id="chatbot-input" placeholder="اكتب هنا..." onkeyup="sendMessage(event)" />
+  </div>
+-->
+<!-- زر لفتح الشات بوت -->
+<!--
+  <button id="chatbot-toggle" onclick="toggleChatbot()">🗨️</button>
+-->
+
+
+
+
+
+<!-- الكود البرمجي -->
+<!--
+ <script>
+    // إظهار الشات بوت
+    function toggleChatbot() {
+      const chatbot = document.getElementById("chatbot");
+      chatbot.style.display = (chatbot.style.display === "none" || chatbot.style.display === "") ? "flex" : "none";
+    }
+
+    // إرسال الرسالة من المستخدم
+    function sendMessage(event) {
+      const input = document.getElementById("chatbot-input");
+      const message = input.value.trim();
+
+      if (event.key === "Enter" && message !== "") {
+        addMessage("user", message);  // إضافة رسالة المستخدم
+        input.value = '';  // مسح حقل الإدخال بعد إرسال الرسالة
+
+        // استجابة الشات بوت
+        setTimeout(() => {
+          addMessage("bot", getBotResponse(message));  // إضافة رسالة من الشات بوت
+        }, 1000);
+      }
+    }
+
+    // إضافة الرسائل إلى واجهة الشات بوت
+    function addMessage(sender, message) {
+      const messageContainer = document.createElement("div");
+      messageContainer.classList.add(sender);
+      messageContainer.innerText = message;
+      document.getElementById("chatbot-messages").appendChild(messageContainer);
+
+      // التمرير إلى أسفل عند إضافة رسالة جديدة
+      document.getElementById("chatbot-messages").scrollTop = document.getElementById("chatbot-messages").scrollHeight;
+    }
+
+    // استجابة الشات بوت
+    function getBotResponse(userMessage) {
+      // هنا يمكنك إضافة منطق الشات بوت الخاص بك (مثلاً: استجابة ثابتة أو من خلال API)
+      if (userMessage.includes("مرحبا")) {
+        return "أهلاً! كيف يمكنني مساعدتك اليوم؟";
+      } else if (userMessage.includes("كيف حالك")) {
+        return "أنا بخير، شكراً على سؤالك!";
+      } else {
+        return "آسف، لم أفهم سؤالك. هل يمكنني مساعدتك بشيء آخر؟";
+      }
+    }
+  </script>
+
+
+-->
+
+
+
+
+<div id="purchase-alert">
+  <p>تم الشراء بنجاح</p>
+  <button onclick="closeAlert()">OK</button>
+</div>
+
+
+
+
+<script>
+  // ... displayCart and updateQuantity functions ...
+
+  // زر الدفع
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("checkout-btn")) {
+      document.getElementById("purchase-alert").classList.add("show");
+    }
+  });
+
+  function closeAlert() {
+    document.getElementById("purchase-alert").classList.remove("show");
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<script>
+  let currentLang = "ar";
+  let translations;
+  
+  fetch("lang.json")
+    .then(res => res.json())
+    .then(data => {
+      translations = data;
+    });
+  
+  document.getElementById("language-toggle").addEventListener("click", () => {
+    currentLang = currentLang === "ar" ? "en" : "ar";
+    updateLanguage();
+  });
+  
+  function updateLanguage() {
+    document.querySelectorAll("[data-key]").forEach(element => {
+      const key = element.getAttribute("data-key");
+      if (translations[currentLang][key]) {
+        element.textContent = translations[currentLang][key];
+      }
+    });
+  }
+  </script>
+  
+-->
+
+
+
+
+
+
+
+
+
+
+<script>
+  let currentLang = "ar";
+
+  const translations = {
+    "ar": {
+      "home": "الصفحة الرئيسية",
+      "features": "ميزاتنا",
+      "latest": "احدث الهواتف",
+      "change_language": "تغيير اللغة",
+      "logout": "تسجيل الخروج",
+      "welcome": "أهلا بك",
+      "hero_title": "موقعنا الأفضل لشراء الهواتف",
+      "hero_desc": "احصل على أحدث الأجهزة بأفضل الأسعار",
+      "order_now": "اطلب الآن",
+      "features_title": "ميزاتنا",
+      "fast_delivery_title": "توصيل سريع",
+      "fast_delivery_desc": "طلب هيوصل لحد بيتك خلال 2-4 ايام",
+      "secure_payment_title": "حماية وامان",
+      "secure_payment_desc": "حماية اثناء الدفع",
+      "wide_selection_title": "تشكيلة واسعة",
+      "wide_selection_desc": "لدينا احدث الهواتف",
+      "support_title": "دعم فني",
+      "support_desc": "دعم فني لحل جميع مشاكلك",
+      "latest": "احدث الهواتف",
+      "specifications": "المواصفات:",
+      "screen": "الشاشة",
+      "memory": "الذاكرة",
+      "ram": "الرام",
+      "processor": "المعالج",
+      "price": "السعر",
+      "view_more": "عرض المزيد من الهواتف",
+      "payment_methods_title": "وسائل الدفع المدعومة",
+      "visa": "فيزا",
+      "apple_pay": "Apple Pay",
+      "paypal": "PayPal",
+      "quick_stats": "إحصائيات سريعة",
+      "orders_completed": "طلب مكتمل",
+      "happy_clients": "عميل سعيد",
+      "available_products": "منتج متاح",
+      "testimonials_title": "آراء عملائنا",
+      "review_name_1": "أحمد علي",
+      "review_text_1": "موقع ممتاز! سرعة في التوصيل ومنتجات أصلية.",
+      "review_name_2": "سارة محمد",
+      "review_text_2": "خدمة رائعة والأسعار منافسة. أنصح به بشدة!",
+      "review_name_3": "خالد يوسف",
+      "review_text_3": "تجربة مميزة ومنتجات بجودة عالية جدًا.",
+      "footer_rights": "جميع الحقوق محفوظة لموقع Smart Device",
+      "buy_now": "شراء"
+
+    },
+    "en": {
+      "home": "Home",
+      "features": "Features",
+      "latest": "Latest Phones",
+      "change_language": "Change Language",
+      "logout": "Logout",
+      "welcome": "Welcome",
+      "hero_title": "The Best Place to Buy Phones",
+      "hero_desc": "Get the latest devices at the best prices",
+      "order_now": "Order Now",
+      "features_title": "Our Features",
+      "fast_delivery_title": "Fast Delivery",
+      "fast_delivery_desc": "Your order will arrive in 2-4 days",
+      "secure_payment_title": "Secure Payment",
+      "secure_payment_desc": "Safe payment process",
+      "wide_selection_title": "Wide Selection",
+      "wide_selection_desc": "We offer the latest phones",
+      "support_title": "Tech Support",
+      "support_desc": "Support for all your issues",
+      "latest": "Latest Phones",
+      "specifications": "Specifications:",
+      "screen": "Screen",
+      "memory": "Memory",
+      "ram": "RAM",
+      "processor": "Processor",
+      "price": "Price",
+      "view_more": "View More Phones",
+      "payment_methods_title": "Supported Payment Methods",
+      "visa": "Visa",
+      "apple_pay": "Apple Pay",
+      "paypal": "PayPal",
+      "quick_stats": "Quick Stats",
+      "orders_completed": "Orders Completed",
+      "happy_clients": "Happy Clients",
+      "available_products": "Available Products",
+      "testimonials_title": "Customer Reviews",
+      "review_name_1": "Ahmed Ali",
+      "review_text_1": "Excellent website! Fast delivery and genuine products.",
+      "review_name_2": "Sarah Mohamed",
+      "review_text_2": "Great service and competitive prices. Highly recommended!",
+      "review_name_3": "Khaled Youssef",
+      "review_text_3": "Amazing experience and very high-quality products.",
+      "footer_rights": "All rights reserved to Smart Device",
+      "buy_now": "Buy Now"
+
+    }
+  };
+
+  document.getElementById("language-toggle").addEventListener("click", () => {
+    currentLang = currentLang === "ar" ? "en" : "ar";
+    updateLanguage();
+  });
+
+  function updateLanguage() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+      const key = el.getAttribute("data-key");
+      if (translations[currentLang][key]) {
+        el.textContent = translations[currentLang][key];
+      }
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
