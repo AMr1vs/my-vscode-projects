@@ -1,0 +1,205 @@
+/* Updated Colors for a Restaurant Theme */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff8e1;
+  /* Warm beige background */
+  color: #4e342e;
+  /* Rich brown text for a cozy feel */
+  transition: none;
+}
+
+header {
+  background: linear-gradient(to right, #d84315, #ff7043);
+  /* Warm orange gradient */
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-bottom: 5px solid #bf360c;
+}
+
+nav {
+  background: linear-gradient(to right, #6d4c41, #8d6e63);
+  /* Earthy brown gradient */
+  text-align: center;
+  padding: 12px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  display: none;
+}
+
+section {
+  padding: 50px 20px;
+  color: #4e342e;
+  text-align: center;
+}
+
+section#about {
+  background: #ffe0b2;
+  /* Light orange */
+}
+
+section#meals {
+  background: #ffcc80;
+  /* Soft peach */
+}
+
+section#contact {
+  background: #d84315;
+  /* Vibrant orange */
+  color: white;
+}
+
+/* Modernized Contact Form */
+section#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+section#contact input,
+section#contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+section#contact textarea {
+  resize: none;
+}
+
+section#contact button {
+  background: linear-gradient(to right, #ff7043, #d84315);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+section#contact button:hover {
+  background: linear-gradient(to right, #d84315, #ff7043);
+}
+
+h2 {
+  color: #bf360c;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.meals {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.meal {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.meal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.meal img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.meal h3 {
+  font-size: 20px;
+  padding: 10px 0;
+  color: #6d4c41;
+}
+
+.meal p {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #8d6e63;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #e64a19;
+}
+
+close:hover {
+  color: #d84315;
+}
+
+button {
+  background: linear-gradient(to right, #ff7043, #d84315);
+  /* Warm button gradient */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #d84315, #ff7043);
+  /* Reverse gradient on hover */
+}
